@@ -1,7 +1,7 @@
-import {getHtml} from './lib/scraper';
+import {getHtml, getTwitterFollowers} from './lib/scraper';
 
 async function startScrape() {
-    console.log(await getHtml(`https://twitter.com/LiamRDawson`));
+    getTwitterFollowers(await getHtml(`https://twitter.com/LiamRDawson`));
 }
 
 startScrape();
