@@ -1,10 +1,16 @@
-import {getHtml, getTwitterFollowers, getInstagramFollowers} from './lib/scraper';
+import express from 'express';
+import {getTwitterFollowers, getInstagramFollowers} from './lib/scraper';
 
-async function startScrape(twitUser = 'LiamRDawson', instaUser = 'liam_r_dawson') {
-    const twCount = await getTwitterFollowers(twitUser);
-    const instaCount = await getInstagramFollowers(instaUser);
-    console.log(`You have ${instaCount} followers on Instagram and ${twCount} followers on Twitter.`);
-    
-}
+const app = express();
 
-startScrape();
+app.get('/scrape', async (req, res, next) => {
+    console.log(`Scraping!`);
+    const [instaCount, twitCount] = await Promise.all([
+        getInstagramFollowers(), 
+        getTwitterFollowers()
+    ]);
+    console.log(instaCount, twitCount);
+    res.json({instaCount, twitCount})
+});
+
+app.listen(8652, () => console.log(`example app running on port 8652`));
