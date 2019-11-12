@@ -4,7 +4,7 @@
 - [x] Set up Express server.
 - [x] Save data to DB.
 - [x] Setup a cron job.
-- [ ] Send current scrape logic to backend folder.
+- [x] Send current scrape logic to backend folder.
 - [ ] Create endpoint.
 
 
