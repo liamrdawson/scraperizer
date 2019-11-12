@@ -5,9 +5,9 @@
 - [x] Save data to DB.
 - [x] Setup a cron job.
 - [x] Send current scrape logic to backend folder.
-- [ ] Create endpoint for data.
-    - [ ] Get scrape data.
-    - [ ] Respond with JSON
+- [x] Create endpoint for data.
+    - [x] Get scrape data.
+    - [x] Respond with JSON
 
 
 ## **Frontend**
