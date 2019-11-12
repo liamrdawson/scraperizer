@@ -1,11 +1,11 @@
 import express from 'express';
 import db from './lib/db';
+import cors from 'cors';
 import './lib/cron';
 import {getTwitterFollowers, getInstagramFollowers} from './lib/scraper';
 
 const app = express();
-
-console.log(db);
+app.use(cors());
 
 app.get('/scrape', async (req, res, next) => {
     console.log(`Scraping!`);
@@ -16,4 +16,9 @@ app.get('/scrape', async (req, res, next) => {
     res.json({instaCount, twitCount});
 });
 
-app.listen(8652, () => console.log(`example app running on port 8652`));
+app.get('/data', async (req, res, next) => {
+    const twitter = db.value();
+    res.json(twitter);
+});
+
+app.listen(8652, () => console.log(`example app running on port http://localhost:8652`));
