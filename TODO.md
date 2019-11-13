@@ -3,7 +3,7 @@
 - [x] Filter for unique data.
     - [x] Amend so that decrements in data points are recorded and not filtered out as not being unique. 
         > e.g. record 1, 2, 4, 1, 5, 8 instead of 1, 2, 4, 5, 8
-- [ ] Display data in a chart.
+- [x] Display data in a chart.
 - [ ] Re - fetch button.
 - [ ] Basic styling.
 
