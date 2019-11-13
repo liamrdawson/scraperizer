@@ -4,15 +4,17 @@ import Table from './Table';
 import Chart from './Chart';
 
 export default function Data() {
-    const scrapedData = useContext(ScraperContext);
+    const {scrapes, fetchScrapes} = useContext(ScraperContext);
+
     return(
         <div>
-            <Chart scrapes={scrapedData.twitter} />
-            <Chart scrapes={scrapedData.instagram} />
+            <button type="button" onClick={fetchScrapes}>Refresh Data</button>
+            <Chart scrapes={scrapes.twitter} />
+            <Chart scrapes={scrapes.instagram} />
             <h2>Twitter:</h2>
-            <Table scrapes={scrapedData.twitter}/>
+            <Table scrapes={scrapes.twitter}/>
             <h2>Instagram:</h2>
-            <Table scrapes={scrapedData.instagram}/>
+            <Table scrapes={scrapes.instagram}/>
         </div>
     );
 }
