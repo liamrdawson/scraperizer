@@ -21,15 +21,10 @@ app.get('/data', async (req, res, next) => {
     // Get the scrape data
     const {twitter, instagram} = db.value();
     // Filter for only unique values
-    const uniqueTwitter = twitter.reduce((accumulator, scrape) => {
-        // Check if this scrape is already in accumulator
-        if (!accumulator.find(element => element.count === scrape.count)) {
-            return [...accumulator, scrape];
-        }
-        return accumulator;
-    }, []);
+    const uniqueTwitter = uniqueCount(twitter);
+    const uniqueInstagram = uniqueCount(instagram);
     // Respond with JSON
-    res.json({uniqueTwitter, twitter, instagram});
+    res.json({uniqueTwitter, uniqueInstagram, twitter, instagram});
 });
 
 app.listen(8652, () => console.log(`example app running on port http://localhost:8652`));
