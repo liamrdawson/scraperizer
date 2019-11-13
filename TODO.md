@@ -13,7 +13,7 @@
 - [x] Create endpoint for data.
     - [x] Get scrape data.
     - [x] Respond with JSON.
-- [ ] Modify cron to run every 30 minutes instead of every minute.
+- [x] Modify cron to run every 30 minutes instead of every minute.
 
 
 ## **Frontend**
