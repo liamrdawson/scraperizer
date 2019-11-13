@@ -1,5 +1,10 @@
 # **To Do List**
 
+- [ ] Filter for unique data.
+- [ ] Display data in a chart.
+- [ ] Re - fetch button.
+- [ ] Basic styling.
+
 ## **Backend**
 - [x] Set up Express server.
 - [x] Save data to DB.
@@ -7,7 +12,8 @@
 - [x] Send current scrape logic to backend folder.
 - [x] Create endpoint for data.
     - [x] Get scrape data.
-    - [x] Respond with JSON
+    - [x] Respond with JSON.
+- [ ] Modify cron to run every 30 minutes instead of every minute.
 
 
 ## **Frontend**
