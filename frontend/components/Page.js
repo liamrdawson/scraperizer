@@ -15,7 +15,7 @@ function useScrapes() {
         setScrapes(data);
     }
 
-    // didMount/didUpdate 
+    // didMount/didUpdate
     useEffect(() => {
         fetchScrapes();
     }, []);
@@ -30,6 +30,6 @@ export default function Page({children}) {
             <div className="page">
                 {children}
             </div>
-        </ScraperProvider>
+        </ScraperProvider>  
     );  
 }
