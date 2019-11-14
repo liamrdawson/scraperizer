@@ -1,4 +1,3 @@
-  
 import React, { PureComponent } from 'react';
 import { formatDistanceToNow } from 'date-fns';
 
@@ -14,10 +13,9 @@ import {
 
 export default class Example extends PureComponent {
   render() {
-
-    const scrapesWithDates = this.props.scrapes.map( scrape => ({
-        ...scrape, 
-        date: formatDistanceToNow(new Date(scrape.date))
+    const scrapesWithDates = this.props.scrapes.map(scrape => ({
+      ...scrape,
+      date: formatDistanceToNow(new Date(scrape.date)),
     }));
 
     return (

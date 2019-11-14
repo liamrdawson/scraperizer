@@ -1,35 +1,33 @@
-import {useEffect, useState} from 'react';
-import {ScraperProvider} from './ScraperContext';
+import { useEffect, useState } from 'react';
+import { ScraperProvider } from './ScraperContext';
 
 function useScrapes() {
-    // Initial state in custom hook.
-    const [scrapes, setScrapes] = useState({
-        twitter: [],
-        instagram: [],
-    });
+  // Initial state in custom hook.
+  const [scrapes, setScrapes] = useState({
+    twitter: [],
+    instagram: [],
+  });
 
-    // Fetch function
-    async function fetchScrapes () {
-        const res = await fetch('http://localhost:8652/data');
-        const data = await res.json();
-        setScrapes(data);
-    }
+  // Fetch function
+  async function fetchScrapes() {
+    const res = await fetch('http://localhost:8652/data');
+    const data = await res.json();
+    setScrapes(data);
+  }
 
-    // didMount/didUpdate
-    useEffect(() => {
-        fetchScrapes();
-    }, []);
+  // didMount/didUpdate
+  useEffect(() => {
+    fetchScrapes();
+  }, []);
 
-    return {scrapes, fetchScrapes};
+  return { scrapes, fetchScrapes };
 }
 
-export default function Page({children}) {
-    const hookInfo = useScrapes();
-    return(
-        <ScraperProvider value={hookInfo}>
-            <div className="page">
-                {children}
-            </div>
-        </ScraperProvider>  
-    );  
+export default function Page({ children }) {
+  const hookInfo = useScrapes();
+  return (
+    <ScraperProvider value={hookInfo}>
+      <div className="page">{children}</div>
+    </ScraperProvider>
+  );
 }
